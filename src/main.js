@@ -4,6 +4,8 @@ import App from './App'
 import store from './store'
 import router from './router'
 
+import 'normalize.css'
+
 require('es6-promise').polyfill()
 require('isomorphic-fetch')
 

@@ -15,4 +15,8 @@ export default {
 </script>
 
 <style lang="less">
+#app {
+  width: 960px;
+  margin: auto;
+}
 </style>
