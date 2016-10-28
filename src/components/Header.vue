@@ -2,9 +2,55 @@
   <div class="header">
     <img class="logo" src="../assets/logo.png" alt="">
     <div class="right">
-      <div class="actions"></div>
+      <div class="actions">
+        <div class="logreg">
+          <a href="" class="login">Log In</a>
+          <span>/</span>
+          <a href="" class="register">Register</a>
+        </div>
+        <div class="search">
+          <input type="text" name="name" value="">
+          <a href=""></a>
+        </div>
+        <div class="lang-switch">
+          <a href="" class="en active">EN</a>
+          <a href="" class="zh">CH</a>
+        </div>
+      </div>
       <ul class="menu">
-        <li>Mission</li>
+        <li>
+          <a href="#">Mission</a>
+        </li>
+        <li class="has-sub">
+          <a href="#">Event</a>
+          <ul class="sub-menu">
+            <li><a href="#">Forum</a><a class="arrow"></a></li>
+            <li><a href="#">Leclure</a><a class="arrow"></a></li>
+            <li><a href="#">WorkShop</a><i class="arrow"></i></li>
+          </ul>
+        </li>
+        <span></span>
+        <li class="lab has-sub">
+          <a href="#">Lab</a>
+          <ul class="sub-menu">
+            <li><a href="#">Jewelry Lab</a><a class="arrow"></a></li>
+            <li><a href="#">Glass Lab</a><a class="arrow"></a></li>
+            <li><a href="#">Perfume Lab</a><a class="arrow"></a></li>
+          </ul>
+        </li>
+        <span></span>
+        <li>
+          <a href="#">Cooperation</a>
+        </li>
+        <li class="about has-sub">
+          <a href="#">About</a>
+          <ul class="sub-menu">
+            <li><a href="#">Faculty</a><a class="arrow"></a></li>
+            <li><a href="#">Alumni</a><a class="arrow"></a></li>
+            <li><a href="#">Contact</a><a class="arrow"></a></li>
+          </ul>
+        </li>
+        <span></span>
       </ul>
     </div>
   </div>
@@ -24,15 +70,191 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
   .header {
+    color: #9FA0A0;
     height: 102px;
     padding: 66px 20px 20px 20px;
+    display: flex;
+    position: relative;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      box-sizing: border-box;
+      color: #9FA0A0;
+      text-decoration: none;
+      &:hover {
+        color: #000;
+      }
+    }
     .logo {
       height: 102px;
+      flex-grow: 0;
     }
     .right {
-      float: right;
-      height: 100%;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+  .actions {
+    font-size: 14px;
+    line-height: 22px;
+    a, span {
+      vertical-align: middle;
+    }
+    &>div {
+      display: inline-block;
+    }
+    .logreg {
+      span {
+        display: inline-block;
+        margin: 0 2px;
+      }
+    }
+    .search {
+      margin: 0 20px;
+      position: relative;
+      input {
+        border: 1px solid #766E6B;
+        height: 20px;
+        width: 155px;
+        outline: none;
+        padding: 0 5px;
+        box-sizing: border-box;
+        font-size: 12px;
+      }
+      a {
+        position: absolute;
+        vertical-align: bottom;
+        top: 5px;
+        right: 5px;
+        width: 13px;
+        height: 13px;
+        background: url(../assets/search.png);
+        background-size: cover;
+      }
+    }
+    .lang-switch {
+      a {
+        padding: 1px 0 0 1px;
+        font-size: 13px;
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        text-align: center;
+        &.active, &:hover {
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .menu {
+    margin: 0;
+    font-size: 16px;
+    &> li {
+      display: inline-block;
+      margin: 0 25px;
+      position: relative;
+      &:hover > a {
+        color: #000;
+      }
+      &.lab:hover > a {
+        color: #E43264;
+      }
+    }
+    &> li:hover .sub-menu, &> li:active .sub-menu {
+      display: block;
+    }
+    .sub-menu {
+      display: none;
+      position: absolute;
+      z-index: 100;
+      box-sizing: border-box;
+      width: 220px;
+      top: 0;
+      padding-top: 43px;
+      left: 0;
+      .arrow {
+        display: none;
+      }
+      li {
+        height: 36px;
+        line-height: 36px;
+        position: relative;
+        &:not(:last-child) {
+          border-bottom: 1px solid #fff;
+        }
+        a {
+          color: #fff;
+        }
+        &:hover .arrow {
+          position: absolute;
+          top: 11px;
+          right: 0;
+          display: block;
+        }
+      }
+    }
+    &> li.lab {
+      li {
+        &:not(:last-child) {
+          border-bottom: 1px solid #E43264;
+        }
+        a {
+          color: #E43264;
+        }
+      }
+    }
+    &> li.about {
+      text-align: right;
+      .sub-menu {
+        left: auto;
+        right: 0;
+      }
+      li {
+        &:hover .arrow {
+          right: auto;
+          left: 0;
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &> li.has-sub:hover + span {
+      position: absolute;
+      z-index: 0;
+      top: 100%;
+      left: 20px;
+      width: 918px;
+      height: 152px;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+    .arrow {
+      position: relative;
+      width: 11px;
+      height: 14px;
       overflow: hidden;
+      border-left: 1px solid currentColor;
+      &::before, &::after {
+        content: '\20';
+        position: absolute;
+        left: -2px;
+        width: 13px;
+        height: 0;
+        border-top: 1px solid currentColor;
+      }
+      &::before {
+        transform: rotate(35deg);
+        top: 3px;
+      }
+      &::after {
+        transform: rotate(-35deg);
+        bottom: 3px;
+      }
     }
   }
 </style>

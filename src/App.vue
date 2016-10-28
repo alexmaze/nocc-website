@@ -17,6 +17,7 @@ export default {
 <style lang="less">
 #app {
   width: 960px;
+  background: rgba(0,0,0,0.1);
   margin: auto;
 }
 </style>
