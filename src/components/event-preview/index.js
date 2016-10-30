@@ -4,15 +4,13 @@ export default {
   props: ['data'],
   template: require('./event-preview.html'),
   data () {
-    return {
-      msg: 'Hello NOCC!'
-    }
+    return {}
   },
   methods: {
     detail () {
       console.log(this.data.id)
       this.$router.push({
-        path: '/event',
+        name: 'event',
         params: {
           id: this.data.id
         }

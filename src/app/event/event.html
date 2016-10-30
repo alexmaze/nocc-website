@@ -1,0 +1,10 @@
+<div class="event-page">
+  <img class="post-image" :src="event.url" alt="">
+  <p class="title">{{event.name}}</p>
+  <p class="content">{{event.content}}</p>
+
+  <div class="attached-image" v-for="img in event.images">
+    <img class="post-image" :src="img.url" alt="">
+    <p class="description">{{img.description}}</p>
+  </div>
+</div>
