@@ -1,15 +1,60 @@
 .footer {
+  a {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+  }
   width: 100%;
   height: 402px;
   background: #0F090B;
   color: #fff;
+  font-size: 12px;
+  position: relative;
   .nav-in {
-
+    text-align: center;
+    padding-top: 18px;
+    a {
+      display: inline-block;
+    }
+    .home {
+      margin-right: 110px;
+    }
+    .link {
+      width: 88px;
+      border-left: 1px solid currentColor;
+    }
   }
   .nav-out {
-
+    padding: 102px 65px 0;
+    display: flex;
+    img {
+      width: 237px;
+      height: 44px;
+    }
+    .link-title {
+      margin-left: 85px;
+      margin-right: 15px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0 15px;
+      width: 200px;
+      // height: 130px;
+      border-left: 1px solid currentColor;
+      li {
+        margin-bottom: 17px;
+        line-height: 1.5;
+      }
+    }
   }
   .copyright {
-
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
   }
 }
