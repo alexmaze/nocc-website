@@ -1,0 +1,20 @@
+<div class="mission-page">
+
+  <div class="slider-box">
+    <slider
+      height="100%"
+      animation="fade"
+      :interval="5000"
+      :speed="1000">
+      <slider-item v-for="slide in slides"
+        :style="{
+          backgroundImage: 'url(' + slide.url + ')',
+          backgroundSize: 'cover',
+          backgroundPosition: '50% 50%'
+        }">
+      </slider-item>
+    </slider>
+  </div>
+
+  <div class="content" v-html="content"></div>
+</div>
