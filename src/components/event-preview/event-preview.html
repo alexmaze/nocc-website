@@ -1,0 +1,8 @@
+<div class="event-preview" @click="detail">
+  <div class="image" :style="{ backgroundImage: 'url(' + data.url + ')' }"></div>
+  <div class="content">
+    <p class="title">{{data.name}}</p>
+    <p class="date">{{data.date}}</p>
+    <p class="text">{{data.content}}</p>
+  </div>
+</div>

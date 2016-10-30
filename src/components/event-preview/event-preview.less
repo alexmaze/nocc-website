@@ -1,0 +1,53 @@
+.event-preview {
+  height: 348px;
+  display: flex;
+  cursor: pointer;
+  &:hover {
+    .title, .date {
+      text-decoration: underline;
+    }
+  }
+  .image {
+    width: 242px;
+    flex-shrink: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+  .content {
+    padding-left: 95px;
+    position: relative;
+    width: 400px;
+    box-sizing: border-box;
+    padding-top: 30px;
+    &::before {
+      content: '\20';
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      top: e('calc(50% - 19px)');
+      left: 30px;
+      background-image: url(../../assets/flag.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .title, .date {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.4;
+      margin: 0;
+      overflow: hidden;
+    }
+    .title {
+      height: 50px;
+    }
+    .date {
+      height: 24px;
+    }
+    .text {
+      color: #7B7B7B;
+      height: 190px;
+      overflow: hidden;
+      line-height: 1.2;
+    }
+  }
+}
