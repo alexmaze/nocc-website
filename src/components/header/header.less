@@ -102,7 +102,7 @@
   .sub-menu {
     display: none;
     position: absolute;
-    z-index: 100;
+    z-index: 200;
     box-sizing: border-box;
     width: 220px;
     top: 0;
@@ -153,9 +153,34 @@
       }
     }
   }
+  &> li.has-sub {
+    &:hover {
+      &::before, &::after {
+        display: block;
+      }
+    }
+    &::before, &::after {
+      display: none;
+      content: '\20';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+    }
+    &::before {
+      background-color: rgba(0, 0, 0, 0.75);
+      top: 29px;
+      left: 20%;
+      transform: rotate(45deg);
+    }
+    &::after {
+      background-color: #fff;
+      top: 20px;
+      left: e('calc(20% - 9px)');
+    }
+  }
   &> li.has-sub:hover + span {
     position: absolute;
-    z-index: 0;
+    z-index: 100;
     top: 100%;
     left: 20px;
     width: 918px;
