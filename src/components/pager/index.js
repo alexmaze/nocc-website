@@ -6,5 +6,13 @@ export default {
     return {
       msg: 'Hello NOCC!'
     }
+  },
+  methods: {
+    goPre () {
+
+    },
+    goNext () {
+
+    }
   }
 }
