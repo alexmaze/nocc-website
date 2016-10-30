@@ -6,5 +6,12 @@ export default {
     return {
       msg: 'Hello NOCC!'
     }
+  },
+  methods: {
+    goHome () {
+      this.$router.push({
+        name: 'index'
+      })
+    }
   }
 }
