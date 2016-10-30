@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Index from './components/Index'
-import Showcase from './components/Showcase'
-import EventList from './components/EventList'
-import Mission from './components/Mission'
+import Main from './app/main'
+import Showcase from './app/showcase'
 
 Vue.use(VueRouter)
 
@@ -13,19 +11,13 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: Index,
+      component: Main,
       children: [
         {
           path: '',
           component: Showcase
-        }, {
-          path: 'events',
-          component: EventList
         }
       ]
-    }, {
-      path: '/jewelry-lab',
-      component: Mission
     }
   ]
 })

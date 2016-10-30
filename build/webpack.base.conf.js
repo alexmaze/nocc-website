@@ -56,6 +56,11 @@ module.exports = {
         loader: 'json'
       },
       {
+        test: /\.html$/,
+        loader: 'vue-html',
+        exclude: /node_modules/
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',
         query: {

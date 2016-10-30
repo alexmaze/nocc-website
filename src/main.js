@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { sync } from 'vuex-router-sync'
-import App from './App'
+import App from './app'
 import store from './store'
 import router from './router'
 
@@ -13,6 +13,7 @@ sync(store, router)
 
 /* eslint-disable no-new */
 new Vue({
+  name: 'root',
   el: '#app',
   render: h => h(App),
   store,
