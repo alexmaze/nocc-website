@@ -1,3 +1,45 @@
 <div class="showcase-page">
-  <h1>{{ msg }}</h1>
+  <div class="slider-box">
+    <slider
+      height="100%"
+      animation="fade"
+      :interval="5000"
+      :speed="1000">
+      <slider-item v-for="slide in slides"
+        :style="{
+          backgroundImage: 'url(' + slide.url + ')',
+          backgroundSize: 'cover',
+          backgroundPosition: '50% 50%'
+        }">
+      </slider-item>
+    </slider>
+  </div>
+  <div class="row">
+    <div class="case">
+      <div class="photo" :style="{ backgroundImage: 'url(' + news[0].url + ')' }"></div>
+      <p class="description">{{news[0].title}}</p>
+    </div>
+    <div class="case">
+      <div class="photo" :style="{ backgroundImage: 'url(' + news[1].url + ')' }"></div>
+      <p class="description">{{news[1].title}}</p>
+    </div>
+    <div class="case">
+      <div class="photo" :style="{ backgroundImage: 'url(' + news[2].url + ')' }"></div>
+      <p class="description">{{news[2].title}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="case">
+      <div class="photo" :style="{ backgroundImage: 'url(' + news[3].url + ')' }"></div>
+      <p class="description">{{news[3].title}}</p>
+    </div>
+    <div class="case">
+      <div class="photo" :style="{ backgroundImage: 'url(' + news[4].url + ')' }"></div>
+      <p class="description">{{news[4].title}}</p>
+    </div>
+    <div class="case">
+      <div class="photo" :style="{ backgroundImage: 'url(' + news[5].url + ')' }"></div>
+      <p class="description">{{news[5].title}}</p>
+    </div>
+  </div>
 </div>

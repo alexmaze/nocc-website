@@ -1,6 +1,69 @@
-
 .showcase-page {
+  margin-bottom: 115px;
+  padding: 0 20px;
   overflow: hidden;
-  height: 500px;
-  background: red;
+  .slider-box {
+    width: 920px;
+    height: 380px;
+    .slider-btn {
+      display: none;
+    }
+    .slider-indicator-icon {
+      margin: 0 5px;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+    .slider-indicator-active {
+      background: rgba(255, 255, 255, 1);
+    }
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    .case {
+      background: red;
+      height: 303px;
+      width: 303px;
+      margin-top: 40px;
+      position: relative;
+      .photo {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+      &:hover {
+        .description {
+          opacity: 1;
+        }
+      }
+      .description {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 12px 12px 12px 66px;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in-out;
+        font-weight: bold;
+        line-height: 1.5;
+        &::before {
+          content: '\20';
+          position: absolute;
+          width: 38px;
+          height: 38px;
+          top: 20px;
+          left: 12px;
+          background-image: url(../../assets/flag.png);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
 }
