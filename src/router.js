@@ -6,6 +6,7 @@ import Showcase from './app/showcase'
 import Mission from './app/mission'
 import Event from './app/event'
 import Events from './app/events'
+import JewelryLab from './app/jewelry-lab'
 
 Vue.use(VueRouter)
 
@@ -34,6 +35,10 @@ const router = new VueRouter({
           component: Events
         }
       ]
+    }, {
+      name: 'jewelry',
+      path: '/jewelry-lab',
+      component: JewelryLab
     }
   ]
 })
