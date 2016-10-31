@@ -164,27 +164,23 @@
   }
   &> li.has-sub {
     &:hover {
-      &::before, &::after {
+      &::before {
         display: block;
       }
     }
-    &::before, &::after {
+    &::before {
       display: none;
       content: '\20';
       position: absolute;
-      width: 18px;
-      height: 18px;
-    }
-    &::before {
-      background-color: rgba(0, 0, 0, 0.75);
-      top: 29px;
-      left: 20%;
-      transform: rotate(45deg);
-    }
-    &::after {
-      background-color: #fff;
-      top: 20px;
-      left: e('calc(20% - 9px)');
+      top: 25px;
+      left: 15%;
+      width: 0;
+      height: 0;
+      font-size: 0;
+      line-height: 0;
+      transform: rotate(-135deg);
+      border: 13px solid transparent;
+      border-bottom-color: rgba(0, 0, 0, 0.75);
     }
   }
   &> li.has-sub:hover + span {
