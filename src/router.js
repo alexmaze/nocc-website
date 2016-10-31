@@ -39,6 +39,9 @@ const router = new VueRouter({
       name: 'jewelry',
       path: '/jewelry-lab',
       component: JewelryLab
+    }, {
+      path: '*',
+      redirect: to => '/'
     }
   ]
 })
