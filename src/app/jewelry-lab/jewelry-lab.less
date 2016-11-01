@@ -3,8 +3,11 @@
   overflow: hidden;
   .lab-header {
     position: relative;
-
+    height: 558px;
     .slider-box {
+      position: absolute;
+      left: 0;
+      top: 0;
       width: 100%;
       height: 558px;
       .slider-btn {
@@ -21,6 +24,55 @@
       }
     }
 
+    .actions {
+      position: relative;
+      z-index: 100;
+      font-size: 14px;
+      line-height: 22px;
+      .actions-in {
+        width: 900px;
+        margin: auto;
+        padding-top: 60px;
+        text-align: right;
+      }
+      a {
+        box-sizing: border-box;
+        color: #F3A68C;
+        text-decoration: none;
+        &:hover {
+          color: #7C6761;;
+        }
+      }
+      a, span {
+        vertical-align: middle;
+      }
+      .logreg {
+        display: inline-block;
+        margin-right: 190px;
+        span {
+          display: inline-block;
+          margin: 0 2px;
+          color: #808080;
+        }
+      }
+      .lang-switch {
+        display: inline-block;
+        a {
+          padding: 1px 0 0 1px;
+          font-size: 13px;
+          width: 22px;
+          height: 22px;
+          display: inline-block;
+          text-align: center;
+          color: #808080;
+          &.active, &:hover {
+            background: rgba(231,34,63,0.85);
+            color: #fff;
+          }
+        }
+      }
+    }
+
     .float-menu {
       z-index: 200;
       position: absolute;
@@ -29,6 +81,39 @@
       width: 100%;
       height: 75px;
       background: rgba(231,34,63,0.85);
+      .menu-content {
+        width: 960px;
+        margin: auto;
+        .logo {
+          display: inline-block;
+          img {
+            margin: 5px 0 0 27px;
+            width: 164px;
+            height: 65px;
+          }
+        }
+        ul {
+          float: right;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            display: inline-block;
+            a {
+              height: 75px;
+              line-height: 75px;
+              padding: 0 25px;
+              display: block;
+              text-decoration: none;
+              color: #F6B693;
+              &.active {
+                background: #E50052;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

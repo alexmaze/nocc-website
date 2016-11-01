@@ -1,10 +1,11 @@
 import './jewelry-lab.less'
+import NoccFooter from '../../components/footer'
 import { Slider, SliderItem } from 'vue-easy-slider'
 
 export default {
   name: 'jewelry-lab',
   template: require('./jewelry-lab.html'),
-  components: { Slider, SliderItem },
+  components: { NoccFooter, Slider, SliderItem },
   data () {
     return {
       slides: [{
