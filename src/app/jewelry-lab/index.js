@@ -9,11 +9,7 @@ export default {
     return {
       slides: [{
         title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case8.png',
-        date: '2016.5.1-5.3'
-      }, {
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case2.png',
+        url: '/static/demo/pre1.jpg',
         date: '2016.5.1-5.3'
       }],
       content: `<p>The Spacecraft Tracking and Data (Acquisition) Network (STADAN or STDN) was established by NASA to satisfy the requirement for long-duration, highly-available space-to-ground communications. Real-time operational control and scheduling of the network was provided by the Network Operations Control Center (NOCC) at the Goddard Space Flight Center (GSFC) in Greenbelt, Maryland.[1]</p>
