@@ -41,5 +41,20 @@
     </div>
   </div>
 
+  <div class="page-content page">
+    <div class="top-text" v-html="content"></div>
+
+    <div class="middle-info">
+      <div class="item" v-for="item in midInfo">
+        <div class="photo" :style="{ backgroundImage: 'url(' + item.url + ')' }"></div>
+        <p class="title">{{item.title}}</p>
+        <p class="text">{{item.content}}</p>
+      </div>
+    </div>
+
+    <event-preview :data="event" v-for="event in eventList"></event-preview>
+    <pager></pager>
+  </div>
+
   <nocc-footer></nocc-footer>
 </div>
