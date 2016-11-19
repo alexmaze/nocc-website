@@ -7,6 +7,7 @@ import Mission from './app/mission'
 import Event from './app/event'
 import Events from './app/events'
 import JewelryLab from './app/jewelry-lab'
+import Faculty from './app/faculty'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,10 @@ const router = new VueRouter({
           name: 'events',
           path: 'events/:type',
           component: Events
+        }, {
+          name: 'faculty',
+          path: 'faculty',
+          component: Faculty
         }
       ]
     }, {
