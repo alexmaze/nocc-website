@@ -158,3 +158,102 @@
     }
   }
 }
+
+
+
+@media screen and (max-width: 959px) {
+  .jewelry-lab-page {
+    min-width: 370px;
+
+    .lab-header {
+
+      .actions {
+        background: #fff;
+        .actions-in {
+          width: 100%;
+          height: 58px;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+          padding: 20px 26px 0;
+          .logreg {
+            margin: 0;
+          }
+        }
+      }
+
+      .float-menu {
+        z-index: 200;
+        position: absolute;
+        left: 0;
+        top: 58px;
+        width: 100%;
+        height: auto;
+        background: rgba(231,34,63,0.85);
+        .menu-content {
+          width: 100%;
+          margin: auto;
+          .logo {
+            display: inline-block;
+            img {
+              margin: 5px 0 0 27px;
+              width: 164px;
+              height: 65px;
+            }
+          }
+          ul {
+            float: right;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+              display: inline-block;
+              a {
+                height: 75px;
+                line-height: 75px;
+                padding: 0 25px;
+                display: block;
+                text-decoration: none;
+                color: #F6B693;
+                &.active {
+                  background: #E50052;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
+    .page-content {
+      .top-text {
+        margin: 75px 35px;
+      }
+      .middle-info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .item {
+          width: 100%;
+          .photo {
+            margin: auto;
+          }
+          .title {
+            margin: 0;
+            width: 100%;
+            margin: 50px 0 30px;
+            text-align: center;
+          }
+          .text {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 50px;
+          }
+        }
+      }
+    }
+  }
+}

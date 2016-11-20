@@ -39,17 +39,36 @@
       margin: 0;
       overflow: hidden;
     }
-    /*.position {
-      height: 50px;
-    }
-    .title {
-      height: 24px;
-    }*/
     .text {
       color: #7B7B7B;
       height: 190px;
       overflow: hidden;
       line-height: 1.2;
+    }
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .user-card {
+    height: auto;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    .image {
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      margin: 20px 0;
+    }
+    .content {
+      padding: 20px 7px;
+      width: 100%;
+      &::before {
+        display: none;
+      }
+      p {
+        text-align: center;
+      }
     }
   }
 }
