@@ -62,6 +62,38 @@
 
 @media screen and (max-width: 959px) {
   .footer {
-    display: none;
+    /*display: none;*/
+    height: 430px;
+    .page {
+      width: 370px;
+    }
+    .nav-in {
+      .home {
+        margin-right: 80px;
+      }
+      .link {
+        width: 68px;
+      }
+    }
+    .nav-out {
+      padding: 45px 0 0 70px;
+      flex-direction: column;
+      position: relative;
+      .link-title {
+        margin: 0;
+        position: absolute;
+        top: 122px;
+        left: 70px;
+      }
+      & > ul {
+        margin: 34px 0 0 46px;
+      }
+      & > span {
+        margin: 43px 0 0 0;
+      }
+    }
+    .copyright {
+      transform: scale(0.5);
+    }
   }
 }
