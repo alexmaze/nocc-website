@@ -1,5 +1,34 @@
 {
+  "name": "当首饰与新文化中心",
   "message": {
-    "hello": "你好"
+    "login": "登录",
+    "register": "注册"
+  },
+  "router": {
+    "mission": "使命",
+    "event": "事件",
+    "forum": "论坛",
+    "lecture": "讲座",
+    "workshop": "研讨会",
+    "lab": "实验室",
+    "jewelry_lab": "Jewelry 实验室",
+    "glass_lab": "Glass 实验室",
+    "perfume_lab": "Perfume 实验室",
+    "cooperation": "合作",
+    "about": "关于",
+    "faculty": "成员",
+    "alumni": "校友",
+    "contact": "联系我们",
+
+    "home": "首页",
+    "tju": "同济大学",
+    "join_us": "加入我们",
+    "link": "链接",
+    "copyright": "©2016 NEW CEIER of CONIEMPORARY JEWELRY and FASHION CULURE 沪ICP备00000000号 All Rights Reserved.",
+    "DI": "同济大学设计创意学院",
+    "jal": "Jewelry Accessory 实验室",
+    "smg": "上海玻璃博物馆",
+    "klimt": "Klimt.com",
+    "designed_by": "Designed and hosted by: "
   }
 }

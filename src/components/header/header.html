@@ -3,9 +3,9 @@
   <div class="right">
     <div class="actions">
       <div class="logreg">
-        <a href="" class="login">Log In</a>
+        <a href="" class="login">{{$t('message.login')}}</a>
         <span>/</span>
-        <a href="" class="register">Register</a>
+        <a href="" class="register">{{$t('message.register')}}</a>
       </div>
       <div class="search">
         <input type="text" name="name" value="">
@@ -20,35 +20,35 @@
     </div>
     <ul class="menu">
       <li>
-        <router-link to="/mission">Mission</router-link>
+        <router-link to="/mission">{{$t('router.mission')}}</router-link>
       </li>
       <li class="has-sub">
-        <router-link to="/events">Event</router-link>
+        <router-link to="/events">{{$t('router.event')}}</router-link>
         <ul class="sub-menu">
-          <li><router-link to="/events/forum">Forum</a><a class="arrow"></router-link></li>
-          <li><router-link to="/events/lecture">Leclure</a><a class="arrow"></router-link></li>
-          <li><router-link to="/events/workshop">WorkShop</a><i class="arrow"></router-link></li>
+          <li><router-link to="/events/forum">{{$t('router.forum')}}</a><a class="arrow"></router-link></li>
+          <li><router-link to="/events/lecture">{{$t('router.lecture')}}</a><a class="arrow"></router-link></li>
+          <li><router-link to="/events/workshop">{{$t('router.workshop')}}</a><i class="arrow"></router-link></li>
         </ul>
       </li>
       <span></span>
       <li class="lab has-sub">
-        <router-link to="/jewelry-lab">Lab</router-link>
+        <router-link to="/jewelry-lab">{{$t('router.lab')}}</router-link>
         <ul class="sub-menu">
-          <li><a target="_blank" href="/jewelry-lab">Jewelry Lab</a><a class="arrow"></a></li>
-          <li><a href="#">Glass Lab</a><a class="arrow"></a></li>
-          <li><a href="#">Perfume Lab</a><a class="arrow"></a></li>
+          <li><a target="_blank" href="/jewelry-lab">{{$t('router.jewelry_lab')}}</a><a class="arrow"></a></li>
+          <li><a href="#">{{$t('router.glass_lab')}}</a><a class="arrow"></a></li>
+          <li><a href="#">{{$t('router.perfume_lab')}}</a><a class="arrow"></a></li>
         </ul>
       </li>
       <span></span>
       <li>
-        <a href="#">Cooperation</a>
+        <a href="#">{{$t('router.cooperation')}}</a>
       </li>
       <li class="about has-sub">
-        <a href="#">About</a>
+        <a href="#">{{$t('router.about')}}</a>
         <ul class="sub-menu">
-          <li><router-link to="/faculty">Faculty<a class="arrow"></a></router-link></li>
-          <li><a href="#">Alumni</a><a class="arrow"></a></li>
-          <li><a href="#">Contact</a><a class="arrow"></a></li>
+          <li><router-link to="/faculty">{{$t('router.faculty')}}<a class="arrow"></a></router-link></li>
+          <li><a href="#">{{$t('router.alumni')}}</a><a class="arrow"></a></li>
+          <li><a href="#">{{$t('router.contact')}}</a><a class="arrow"></a></li>
         </ul>
       </li>
       <span></span>
