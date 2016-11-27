@@ -1,5 +1,5 @@
 import './showcase.less'
-import { Slider, SliderItem } from 'vue-easy-slider'
+import { Slider, SliderItem } from '../../components/slider'
 
 export default {
   name: 'showcase',
@@ -46,5 +46,8 @@ export default {
         date: '2016.5.1-5.3'
       }]
     }
+  },
+  mounted () {
+    console.log('showcase mounted')
   }
 }

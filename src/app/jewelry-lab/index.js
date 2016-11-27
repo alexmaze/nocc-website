@@ -3,7 +3,7 @@ import './jewelry-lab.less'
 import NoccFooter from '../../components/footer'
 import EventPreview from '../../components/event-preview'
 import Pager from '../../components/pager'
-import { Slider, SliderItem } from 'vue-easy-slider'
+import { Slider, SliderItem } from '../../components/slider'
 
 export default {
   name: 'jewelry-lab',
