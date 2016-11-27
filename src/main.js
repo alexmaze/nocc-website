@@ -3,6 +3,7 @@ import { sync } from 'vuex-router-sync'
 import App from './app'
 import store from './store'
 import router from './router'
+import './i18n'
 
 import 'normalize.css'
 

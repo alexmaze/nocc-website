@@ -23,8 +23,8 @@
           <a href="" class="register">Register</a>
         </div>
         <div class="lang-switch">
-          <a href="" class="en active">EN</a>
-          <a href="" class="zh">CH</a>
+          <a class="en" :class="{ active: locale === 'en' }" @click="locale = 'en'">EN</a>
+          <a class="zh" :class="{ active: locale === 'zh' }" @click="locale = 'zh'">CH</a>
         </div>
       </div>
     </div>

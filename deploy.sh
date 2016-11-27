@@ -2,7 +2,7 @@
 
 user=root
 root=/root/website
-host=www.nocc.alexyan.xyz
+host=nocc.alexyan.xyz
 path=www
 
 

@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import './jewelry-lab.less'
 import NoccFooter from '../../components/footer'
 import EventPreview from '../../components/event-preview'
@@ -67,6 +68,16 @@ export default {
         name: 'TRIPLE PARADE 2016 TIANJING MUSEUM',
         date: '2016.10.1-2016.11.1'
       }]
+    }
+  },
+  computed: {
+    locale: {
+      get () {
+        return Vue.config.lang
+      },
+      set (val) {
+        Vue.config.lang = val
+      }
     }
   }
 }
