@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import './header.less'
 export default {
   name: 'nocc-header',
@@ -13,16 +12,6 @@ export default {
       this.$router.push({
         name: 'index'
       })
-    }
-  },
-  computed: {
-    locale: {
-      get () {
-        return Vue.config.lang
-      },
-      set (val) {
-        Vue.config.lang = val
-      }
     }
   }
 }

@@ -7,47 +7,43 @@ export default {
   components: { Slider, SliderItem },
   data () {
     return {
-      slides: [{
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case1.png',
-        date: '2016.5.1-5.3'
-      }, {
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case2.png',
-        date: '2016.5.1-5.3'
-      }, {
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case3.png',
-        date: '2016.5.1-5.3'
-      }],
-      news: [{
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case2.png',
-        date: '2016.5.1-5.3'
-      }, {
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case3.png',
-        date: '2016.5.1-5.3'
-      }, {
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case4.png',
-        date: '2016.5.1-5.3'
-      }, {
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case5.png',
-        date: '2016.5.1-5.3'
-      }, {
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case6.png',
-        date: '2016.5.1-5.3'
-      }, {
-        title: 'LI HEN TAIWAN COMTENPORARY JEWELRY LECTURE',
-        url: '/static/demo/case7.png',
-        date: '2016.5.1-5.3'
-      }]
+      slides: [],
+      news: []
+    }
+  },
+  methods: {
+    loadSlides () {
+      fetch('/api/showcase')
+      .then(response => {
+        if (response.status >= 400) {
+          throw new Error('Bad response from server')
+        }
+        return response.json()
+      })
+      .then(data => {
+        data.images.forEach(image => {
+          this.slides.push(image)
+        })
+      })
+    },
+    loadNews () {
+      fetch('/api/event?page=1&perpage=6&type=0')
+      .then(response => {
+        if (response.status >= 400) {
+          throw new Error('Bad response from server')
+        }
+        return response.json()
+      })
+      .then(data => {
+        data.items.forEach(item => {
+          this.news.push(item)
+        })
+      })
     }
   },
   mounted () {
     console.log('showcase mounted')
+    this.loadSlides()
+    this.loadNews()
   }
 }
