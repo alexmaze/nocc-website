@@ -22,7 +22,9 @@ export default {
       })
       .then(data => {
         data.images.forEach(image => {
-          this.slides.push(image)
+          if (image && image.url) {
+            this.slides.push(image)
+          }
         })
       })
     },
