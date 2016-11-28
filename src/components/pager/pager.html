@@ -1,4 +1,4 @@
 <div class="pager">
-  <a class="pre" @click="goPre"></a>
-  <a class="after" @click="goNext"></a>
+  <a class="pre" :class="{ disabled: !hasPre }" @click="goPre"></a>
+  <a class="after" :class="{ disabled: !hasNext }" @click="goNext"></a>
 </div>

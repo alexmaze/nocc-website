@@ -1,4 +1,4 @@
 <div class="events-page page">
   <event-preview :data="event" v-for="event in eventList"></event-preview>
-  <pager></pager>
+  <pager :page="page" :perpage="perpage" :total="total" @next="goNext" @pre="goPre"></pager>
 </div>

@@ -8,50 +8,65 @@ export default {
   components: { EventPreview, Pager },
   data () {
     return {
-      eventList: [{
-        id: '1',
-        url: '/static/demo/event1.png',
-        name: 'TRIPLE PARADE 2016 TIANJING MUSEUM TRIPLE PARADE 2016 TIANJING MUSEUM',
-        date: '2016.10.1-2016.11.1',
-        content: 'The Spacecraft Tracking and Data (Acquisition) Network (STADAN or STDN) was established by NASA to satisfy the requirement for long-duration, highly-available space to ground commons. Real-time operational control and scheduling of the network was provided by the Network Operations Control Center (NOCC) at the Goddard Space Flight Center (GSFC) in Greenbelt, Maryland.[1]'
-      }, {
-        id: '2',
-        url: '/static/demo/event5.png',
-        name: 'TRIPLE PARADE 2016 TIANJING MUSEUM',
-        date: '2016.10.1-2016.11.1',
-        content: 'The Spacecraft Tracking and Data (Acquisition) Network (STADAN or STDN) was established by NASA to satisfy the requirement for long-duration, highly-available space to ground commons. Real-time operational control and scheduling of the network was provided by the Network Operations Control Center (NOCC) at the Goddard Space Flight Center (GSFC) in Greenbelt, Maryland.[1]'
-      }, {
-        id: '1',
-        url: '/static/demo/event3.png',
-        name: 'TRIPLE PARADE 2016 TIANJING MUSEUM',
-        date: '2016.10.1-2016.11.1',
-        content: 'The Spacecraft Tracking and Data (Acquisition) Network (STADAN or STDN) was established by NASA to satisfy the requirement for long-duration, highly-available space to ground commons. Real-time operational control and scheduling of the network was provided by the Network Operations Control Center (NOCC) at the Goddard Space Flight Center (GSFC) in Greenbelt, Maryland.[1]'
-      }, {
-        id: '1',
-        url: '/static/demo/event4.png',
-        name: 'TRIPLE PARADE 2016 TIANJING MUSEUM',
-        date: '2016.10.1-2016.11.1'
-      }, {
-        id: '1',
-        url: '/static/demo/event5.png',
-        name: 'TRIPLE PARADE 2016 TIANJING MUSEUM',
-        date: '2016.10.1-2016.11.1'
-      }]
+      page: 1,
+      perpage: 6,
+      type: 0,
+      total: 0,
+      eventList: []
     }
-  },
-  created () {
-    this.loadData()
   },
   methods: {
     loadData () {
-      console.log('hello events')
-      console.log(this.$route.params.type)
+      if (this.$route.params.type === 'forum') {
+        this.type = 0
+      } else if (this.$route.params.type === 'lecture') {
+        this.type = 1
+      } else if (this.$route.params.type === 'workshop') {
+        this.type = 2
+      }
+      console.log('load events')
+      fetch(`/api/event?page=${this.page}&perpage=${this.perpage}&type=${this.type}`)
+      .then(response => {
+        if (response.status >= 400) {
+          throw new Error('Bad response from server')
+        }
+        return response.json()
+      })
+      .then(data => {
+        this.eventList = []
+        data.items.forEach(item => {
+          item.content = delHtmlTag(item.content)
+          item.content_en = delHtmlTag(item.content_en)
+          this.eventList.push(item)
+        })
+        this.total = data.total
+      })
+    },
+    goNext () {
+      console.log('real go next')
+      this.page++
+      this.loadData()
+    },
+    goPre () {
+      console.log('real go pre')
+      this.page--
+      this.loadData()
     }
   },
   watch: {
     '$route' (to, from) {
       // 对路由变化作出响应...
+      this.page = 1
+      this.total = 0
       this.loadData()
     }
+  },
+  mounted () {
+    console.log('events mounted')
+    this.loadData()
   }
+}
+
+function delHtmlTag (str) {
+  return str.replace(/<[^>]+>/g, '')
 }
