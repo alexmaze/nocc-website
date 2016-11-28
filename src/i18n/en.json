@@ -2,7 +2,10 @@
   "name": "New Center of Contemporary Jewelry and Fashion Culture",
   "message": {
     "login": "Log In",
-    "register": "Register"
+    "register": "Register",
+    "short_term_program": "Short Term Program",
+    "research": "Research",
+    "env": "Environment"
   },
   "router": {
     "mission": "Mission",

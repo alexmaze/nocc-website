@@ -2,7 +2,10 @@
   "name": "当首饰与新文化中心",
   "message": {
     "login": "登录",
-    "register": "注册"
+    "register": "注册",
+    "short_term_program": "近期项目",
+    "research": "研究",
+    "env": "环境"
   },
   "router": {
     "mission": "使命",

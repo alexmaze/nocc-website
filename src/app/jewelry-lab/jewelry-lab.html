@@ -1,7 +1,7 @@
 <div class="jewelry-lab-page">
   <div class="lab-header">
     <div class="slider-box">
-      <slider
+      <slider v-if="slides.length > 0"
         height="100%"
         animation="fade"
         :interval="5000"
@@ -18,9 +18,9 @@
     <div class="actions">
       <div class="actions-in">
         <div class="logreg">
-          <a href="" class="login">Log In</a>
+          <a href="" class="login">{{$t('message.login')}}</a>
           <span>/</span>
-          <a href="" class="register">Register</a>
+          <a href="" class="register">{{$t('message.register')}}</a>
         </div>
         <div class="lang-switch">
           <a class="en" :class="{ active: locale === 'en' }" @click="locale = 'en'">EN</a>
@@ -32,28 +32,31 @@
       <div class="menu-content">
         <div class="logo"><img src="../../assets/logo-lab.png" alt=""></div>
         <ul>
-          <li><a class="active" href="">Short Term Program</a></li>
-          <li><a href="">Research</a></li>
-          <li><a href="">Environment</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a class="active" @click="go('.top-text')">{{$t('message.short_term_program')}}</a></li>
+          <li><a @click="go('.middle-info')">{{$t('message.research')}}</a></li>
+          <li><a @click="go('.event-preview')">{{$t('message.env')}}</a></li>
+          <li><a>{{$t('router.contact')}}</a></li>
         </ul>
       </div>
     </div>
   </div>
 
   <div class="page-content page">
-    <div class="top-text" v-html="content"></div>
+    <div class="top-text" v-if="locale == 'zh'" v-html="content"></div>
+    <div class="top-text" v-if="locale == 'en'" v-html="content_en"></div>
 
     <div class="middle-info">
       <div class="item" v-for="item in midInfo">
         <div class="photo" :style="{ backgroundImage: 'url(' + item.url + ')' }"></div>
-        <p class="title">{{item.title}}</p>
-        <p class="text">{{item.content}}</p>
+        <p class="title" v-if="locale == 'zh'">{{item.title}}</p>
+        <p class="title" v-if="locale == 'en'">{{item.title_en}}</p>
+        <p class="text" v-if="locale == 'zh'">{{item.info}}</p>
+        <p class="text" v-if="locale == 'en'">{{item.info_en}}</p>
       </div>
     </div>
 
     <event-preview :data="event" v-for="event in eventList"></event-preview>
-    <pager></pager>
+    <pager :page="page" :perpage="perpage" :total="total" @next="goNext" @pre="goPre"></pager>
   </div>
 
   <nocc-footer></nocc-footer>
