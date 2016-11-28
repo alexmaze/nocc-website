@@ -12,7 +12,7 @@ export default {
       this.$router.push({
         name: 'event',
         params: {
-          id: this.data.id
+          id: this.data._id
         }
       })
     }

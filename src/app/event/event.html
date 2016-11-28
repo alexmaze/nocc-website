@@ -1,10 +1,15 @@
-<div class="event-page page">
-  <img class="post-image" :src="event.url" alt="">
-  <p class="title">{{event.name}}</p>
-  <p class="content">{{event.content}}</p>
+<div class="event-page page" v-if="event">
+  <img class="post-image" :src="event.poster[0].url" alt="">
+
+  <p class="title" v-if="locale == 'zh'">{{event.title}}</p>
+  <p class="title" v-if="locale == 'en'">{{event.title_en}}</p>
+
+  <p class="content" v-if="locale == 'zh'" v-html="event.content"></p>
+  <p class="content" v-if="locale == 'en'" v-html="event.content_en"></p>
 
   <div class="attached-image" v-for="img in event.images">
     <img class="post-image" :src="img.url" alt="">
-    <p class="description">{{img.description}}</p>
+    <p class="description" v-if="locale == 'zh'">{{img.description}}</p>
+    <p class="description" v-if="locale == 'en'">{{img.description_en}}</p>
   </div>
 </div>
