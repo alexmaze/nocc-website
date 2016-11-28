@@ -1,7 +1,7 @@
 <div class="mission-page page">
 
   <div class="slider-box">
-    <slider
+    <slider v-if="slides.length > 0"
       id="2"
       height="100%"
       animation="fade"
@@ -17,5 +17,6 @@
     </slider>
   </div>
 
-  <div class="content" v-html="content"></div>
+  <div class="content" v-if="locale == 'zh'" v-html="text"></div>
+  <div class="content" v-if="locale == 'en'" v-html="text_en"></div>
 </div>
