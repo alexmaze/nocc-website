@@ -39,5 +39,6 @@ export default {
 }
 
 function delHtmlTag (str) {
+  if (!str || !str.replace) return
   return str.replace(/<[^>]+>/g, '')
 }
