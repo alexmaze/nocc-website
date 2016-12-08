@@ -17,9 +17,11 @@
   </div>
   <div class="row">
     <div class="case" v-for="item in news">
-      <div class="photo" :style="{ backgroundImage: 'url(' + item.poster[0].url + ')' }"></div>
-      <p class="description" v-if="locale == 'zh'">{{item.title}}</p>
-      <p class="description" v-if="locale == 'en'">{{item.title_en}}</p>
+      <a :href="'/event/' + item._id" target="_blank">
+        <div class="photo" :style="{ backgroundImage: 'url(' + item.poster[0].url + ')' }"></div>
+        <p class="description" v-if="locale == 'zh'">{{item.title}}</p>
+        <p class="description" v-if="locale == 'en'">{{item.title_en}}</p>
+      </a>
     </div>
   </div>
 </div>

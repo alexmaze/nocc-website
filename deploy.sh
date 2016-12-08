@@ -2,8 +2,8 @@
 
 user=root
 root=/root/website
-#host=nocc.alexyan.xyz
-host=newnocc.alexyan.xyz
+host=nocc.alexyan.xyz
+# host=newnocc.alexyan.xyz
 path=www
 
 
