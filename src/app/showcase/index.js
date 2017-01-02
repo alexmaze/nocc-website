@@ -29,7 +29,7 @@ export default {
       })
     },
     loadNews () {
-      fetch('/api/event?page=1&perpage=6&type=0')
+      fetch('/api/event?page=1&perpage=6')
       .then(response => {
         if (response.status >= 400) {
           throw new Error('Bad response from server')
