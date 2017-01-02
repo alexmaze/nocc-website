@@ -12,7 +12,7 @@ export default {
     return {
       page: 1,
       perpage: 6,
-      type: 0,
+      type: 10,
       total: 0,
       slides: [],
       content: '',
