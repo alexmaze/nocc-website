@@ -1,6 +1,6 @@
 .user-card {
   display: flex;
-  cursor: pointer;
+  cursor: default;
   &:hover {
     .title, .position, .email {
       text-decoration: underline;
@@ -23,15 +23,15 @@
     box-sizing: border-box;
     padding-top: 30px;
     &::before {
-      content: '\20';
-      position: absolute;
-      width: 38px;
-      height: 38px;
-      top: 96px;
-      left: 30px;
-      background-image: url(../../assets/flag.png);
-      background-size: cover;
-      background-repeat: no-repeat;
+      // content: '\20';
+      // position: absolute;
+      // width: 38px;
+      // height: 38px;
+      // top: 96px;
+      // left: 30px;
+      // background-image: url(../../assets/flag.png);
+      // background-size: cover;
+      // background-repeat: no-repeat;
     }
     .position, .title, .email {
       font-size: 18px;
@@ -42,9 +42,10 @@
     }
     .text {
       color: #7B7B7B;
-      height: 190px;
+      // height: 190px;
+      padding-bottom: 20px;
       overflow: hidden;
-      line-height: 1.2;
+      line-height: 1.4;
     }
   }
 }

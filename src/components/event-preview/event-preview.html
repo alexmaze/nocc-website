@@ -1,10 +1,10 @@
 <div class="event-preview" @click="detail">
   <div class="image" :style="{ backgroundImage: 'url(' + data.poster[0].url + ')' }"></div>
   <div class="content">
-    <p class="title" v-if="locale == 'zh'">{{data.title}}</p>
-    <p class="title" v-if="locale == 'en'">{{data.title_en}}</p>
+    <p class="title" v-show="locale == 'zh'">{{data.title}}</p>
+    <p class="title" v-show="locale == 'en'">{{data.title_en}}</p>
     <p class="date">{{data.time}}</p>
-    <p class="text" v-if="locale == 'zh'" v-html="data.content"></p>
-    <p class="text" v-if="locale == 'en'" v-html="data.content_en"></p>
+    <p class="text" v-show="locale == 'zh'" v-html="data.content"></p>
+    <p class="text" v-show="locale == 'en'" v-html="data.content_en"></p>
   </div>
 </div>

@@ -35,7 +35,7 @@ export default {
         this.midInfo.push(data.circle1)
         this.midInfo.push(data.circle2)
         this.midInfo.push(data.circle3)
-        this.midInfo.push(data.circle4)
+        // this.midInfo.push(data.circle4)
         this.content = data.text
         this.content_en = data.text_en
       })
